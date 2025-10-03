@@ -44,20 +44,17 @@ const RoomShowcase = ({
   rooms = [
     {
       id: "1",
-      name: "Standard Double",
+      name: "Standard Double Room",
       description:
         "Comfortable and well-appointed room with modern amenities and city views. Perfect for couples or business travelers.",
       price: 180,
       capacity: 2,
-      size: 28,
+      size: 24,
       amenities: [
-        "Free Wi-Fi",
-        "Air Conditioning",
+        "Private bathroom",
         "Flat-screen TV",
-        "Mini Bar",
-        "Room Service",
-        "Work Desk",
-        "Safe Box",
+        "Free WiFi",
+        "No Smoking",
       ],
       images: [
         "/Standard Double/0-02-08-10b00b607765fcffad1259873b0405fdc850ce16ababbe6dbdbf973e7a57f45c_350b0725306eea6c.jpg",
@@ -74,21 +71,17 @@ const RoomShowcase = ({
     },
     {
       id: "2",
-      name: "Deluxe King",
+      name: "Deluxe King Room",
       description:
         "Spacious luxury room with king-size bed, premium amenities, and panoramic city views of Ulaanbaatar.",
       price: 280,
       capacity: 2,
-      size: 35,
+      size: 40,
       amenities: [
-        "Free Wi-Fi",
-        "Air Conditioning",
-        "55-inch Smart TV",
-        "Premium Mini Bar",
-        "24/7 Room Service",
-        "Executive Lounge Access",
-        "Marble Bathroom",
-        "City View",
+        "Private bathroom",
+        "Flat-screen TV",
+        "Free WiFi",
+        "No Smoking",
       ],
       images: [
         "/Deluxe king/0-02-08-438308ae94891320e57736cbfea54fb482c4d43dd337c825461a7af6207d776a_ad82cece339ed607.jpg",
@@ -105,18 +98,12 @@ const RoomShowcase = ({
         "Ultimate luxury experience with separate living area, dining room, and exclusive amenities. The pinnacle of hospitality in Mongolia.",
       price: 850,
       capacity: 4,
-      size: 120,
+      size: 48,
       amenities: [
-        "Free Wi-Fi",
-        "Climate Control",
-        "75-inch Smart TV",
-        "Premium Bar & Wine Selection",
-        "Butler Service",
-        "Private Balcony",
-        "Jacuzzi & Steam Room",
-        "Separate Living & Dining Area",
-        "VIP Airport Transfer",
-        "Concierge Service",
+        "Private bathroom",
+        "Flat-screen TV",
+        "Free WiFi",
+        "No Smoking",
       ],
       images: [
         "/Presidential Suite/0-02-08-08f252a81492007d8cf2ebc4ceb28d23a210b4e3824f0ae2e58b81828231607f_2403ca9ac8ec4882.jpg",
@@ -130,20 +117,17 @@ const RoomShowcase = ({
     },
     {
       id: "4",
-      name: "Standard Twin",
+      name: "Standard Twin Room",
       description:
         "Ideal for friends or colleagues traveling together. Two comfortable single beds with modern amenities.",
       price: 160,
       capacity: 2,
-      size: 28,
+      size: 30,
       amenities: [
-        "Free Wi-Fi",
-        "Air Conditioning",
+        "Private bathroom",
         "Flat-screen TV",
-        "Mini Bar",
-        "Room Service",
-        "Work Desk",
-        "Safe Box",
+        "Free WiFi",
+        "No Smoking",
       ],
       images: [
         "/Standard Twin/0-02-08-0e6669c0afe14cf0e830063fa54cf13b47abf373b97628fbf0b697a7c14cbef6_1378a6d50542e0f6.jpg",
@@ -156,21 +140,17 @@ const RoomShowcase = ({
     },
     {
       id: "5",
-      name: "Deluxe Double",
+      name: "Deluxe Double Room",
       description:
         "Enhanced comfort with premium furnishings, upgraded amenities, and stunning views of the Mongolian landscape.",
       price: 240,
       capacity: 2,
-      size: 32,
+      size: 36,
       amenities: [
-        "Free Wi-Fi",
-        "Air Conditioning",
-        "Smart TV",
-        "Premium Mini Bar",
-        "Room Service",
-        "Upgraded Bathroom",
-        "Mountain View",
-        "Coffee Machine",
+        "Private bathroom",
+        "Flat-screen TV",
+        "Free WiFi",
+        "No Smoking",
       ],
       images: [
         "/Deluxe double/0-02-08-2d397bb5e974ca0370b69d47d2cf5aaf59f0de83688285bba44ea0a388ea6670_3443da28a094ff61.jpg",
@@ -184,21 +164,17 @@ const RoomShowcase = ({
     },
     {
       id: "6",
-      name: "Superior Twin",
+      name: "Superior Twin Room",
       description:
         "Spacious twin room with enhanced amenities and elegant décor. Perfect for business travelers or friends.",
       price: 200,
       capacity: 2,
-      size: 30,
+      size: 48,
       amenities: [
-        "Free Wi-Fi",
-        "Air Conditioning",
-        "Smart TV",
-        "Mini Bar",
-        "Room Service",
-        "Work Station",
-        "Premium Bedding",
-        "City View",
+        "Private bathroom",
+        "Flat-screen TV",
+        "Free WiFi",
+        "No Smoking",
       ],
       images: [
         "/Superior Twin/0-02-08-0965e7b83bf96b1da74e9451a2dc1f29377d700f0270b3b04a6609c22c91432d_e511cc2cb00ce8d8.jpg",
@@ -215,22 +191,17 @@ const RoomShowcase = ({
     },
     {
       id: "7",
-      name: "Deluxe Twin",
+      name: "Deluxe Twin Room",
       description:
         "Elegant twin room with sophisticated design and premium amenities. Ideal for business travelers or friends seeking luxury.",
       price: 220,
       capacity: 2,
-      size: 32,
+      size: 40,
       amenities: [
-        "Free Wi-Fi",
-        "Air Conditioning",
-        "Smart TV",
-        "Premium Mini Bar",
-        "Room Service",
-        "Work Station",
-        "Premium Bedding",
-        "City View",
-        "Coffee Machine",
+        "Private bathroom",
+        "Flat-screen TV",
+        "Free WiFi",
+        "No Smoking",
       ],
       images: [
         "/Delxuxe Twin/0-02-08-0105398cdf0df233bacdeef4b455a01769d9c2e9d9034db734ea7c6fba0f8bba_e6cf4edac09c4be2.jpg",
@@ -418,6 +389,8 @@ const ModalImageGallery = ({
   onClose: () => void;
 }) => {
   const [currentIndex, setCurrentIndex] = useState(initialIndex);
+  const [touchStart, setTouchStart] = useState<number | null>(null);
+  const [touchEnd, setTouchEnd] = useState<number | null>(null);
 
   useEffect(() => {
     setCurrentIndex(initialIndex);
@@ -429,6 +402,33 @@ const ModalImageGallery = ({
 
   const prevImage = () => {
     setCurrentIndex((prev) => (prev - 1 + images.length) % images.length);
+  };
+
+  // Minimum swipe distance (in px)
+  const minSwipeDistance = 50;
+
+  const onTouchStart = (e: React.TouchEvent) => {
+    setTouchEnd(null);
+    setTouchStart(e.targetTouches[0].clientX);
+  };
+
+  const onTouchMove = (e: React.TouchEvent) => {
+    setTouchEnd(e.targetTouches[0].clientX);
+  };
+
+  const onTouchEnd = () => {
+    if (!touchStart || !touchEnd) return;
+
+    const distance = touchStart - touchEnd;
+    const isLeftSwipe = distance > minSwipeDistance;
+    const isRightSwipe = distance < -minSwipeDistance;
+
+    if (isLeftSwipe && images.length > 1) {
+      nextImage();
+    }
+    if (isRightSwipe && images.length > 1) {
+      prevImage();
+    }
   };
 
   // Keyboard navigation
@@ -446,12 +446,12 @@ const ModalImageGallery = ({
   }, []);
 
   return (
-    <div className="space-y-4">
+    <div className="flex flex-col h-full w-full">
       {/* Header with close button */}
-      <div className="flex items-center justify-between">
+      <div className="flex items-center justify-between w-full mb-2 sm:mb-4 flex-shrink-0">
         <div>
-          <h3 className="text-lg font-semibold">Image Gallery</h3>
-          <p className="text-sm text-muted-foreground">
+          <h3 className="text-base sm:text-lg font-semibold">Image Gallery</h3>
+          <p className="text-xs sm:text-sm text-muted-foreground">
             {currentIndex + 1} of {images.length}
           </p>
         </div>
@@ -459,29 +459,35 @@ const ModalImageGallery = ({
           variant="outline"
           size="icon"
           onClick={onClose}
-          className="h-8 w-8"
+          className="h-8 w-8 sm:h-10 sm:w-10"
         >
           <X className="h-4 w-4" />
         </Button>
       </div>
 
-      {/* Main image */}
-      <div className="relative">
-        <AspectRatio ratio={16 / 10}>
+      {/* Main image container - responsive and swipeable */}
+      <div
+        className="relative flex-1 min-h-0 mb-2 sm:mb-4 touch-pan-y"
+        onTouchStart={onTouchStart}
+        onTouchMove={onTouchMove}
+        onTouchEnd={onTouchEnd}
+      >
+        <div className="relative w-full h-full">
           <img
             src={images[currentIndex]}
             alt={`${roomName} - Image ${currentIndex + 1}`}
-            className="object-cover w-full h-full rounded-lg"
+            className="object-contain w-full h-full max-h-[60vh] sm:max-h-[70vh] md:max-h-[75vh] lg:max-h-[80vh] rounded-lg select-none"
+            draggable={false}
           />
-        </AspectRatio>
+        </div>
 
-        {/* Navigation arrows */}
+        {/* Navigation arrows - hidden on small screens, visible on larger screens */}
         {images.length > 1 && (
           <>
             <Button
               variant="outline"
               size="icon"
-              className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white/90 hover:bg-white"
+              className="absolute left-2 sm:left-4 top-1/2 transform -translate-y-1/2 bg-white/90 hover:bg-white hidden sm:flex"
               onClick={prevImage}
             >
               <ChevronLeft className="h-4 w-4" />
@@ -490,24 +496,31 @@ const ModalImageGallery = ({
             <Button
               variant="outline"
               size="icon"
-              className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white/90 hover:bg-white"
+              className="absolute right-2 sm:right-4 top-1/2 transform -translate-y-1/2 bg-white/90 hover:bg-white hidden sm:flex"
               onClick={nextImage}
             >
               <ChevronRight className="h-4 w-4" />
             </Button>
           </>
         )}
+
+        {/* Swipe indicator for mobile */}
+        <div className="absolute bottom-2 left-1/2 transform -translate-x-1/2 sm:hidden">
+          <p className="text-xs text-white bg-black/50 px-2 py-1 rounded-full">
+            Swipe to navigate
+          </p>
+        </div>
       </div>
 
-      {/* Thumbnail strip */}
+      {/* Thumbnail strip - responsive sizing */}
       {images.length > 1 && (
-        <div className="flex space-x-2 overflow-x-auto pb-2">
+        <div className="flex space-x-1 sm:space-x-2 overflow-x-auto pb-2 flex-shrink-0 justify-center">
           {images.map((image, index) => (
             <button
               key={index}
-              className={`flex-shrink-0 w-20 h-16 rounded border-2 transition-all ${
-                index === currentIndex 
-                  ? "border-primary" 
+              className={`flex-shrink-0 w-12 h-9 sm:w-16 sm:h-12 rounded border-2 transition-all ${
+                index === currentIndex
+                  ? "border-primary"
                   : "border-border hover:border-primary/50"
               }`}
               onClick={() => setCurrentIndex(index)}
@@ -697,34 +710,34 @@ const FullscreenImageViewer = ({
   React.useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (!isOpen) return;
-      
+
       switch (e.key) {
-        case 'Escape':
+        case "Escape":
           onClose();
           break;
-        case 'ArrowLeft':
+        case "ArrowLeft":
           prevImage();
           break;
-        case 'ArrowRight':
+        case "ArrowRight":
           nextImage();
           break;
       }
     };
 
-    document.addEventListener('keydown', handleKeyDown);
-    return () => document.removeEventListener('keydown', handleKeyDown);
+    document.addEventListener("keydown", handleKeyDown);
+    return () => document.removeEventListener("keydown", handleKeyDown);
   }, [isOpen]);
 
   // Prevent body scroll when fullscreen is open
   React.useEffect(() => {
     if (isOpen) {
-      document.body.style.overflow = 'hidden';
+      document.body.style.overflow = "hidden";
     } else {
-      document.body.style.overflow = 'unset';
+      document.body.style.overflow = "unset";
     }
-    
+
     return () => {
-      document.body.style.overflow = 'unset';
+      document.body.style.overflow = "unset";
     };
   }, [isOpen]);
 
@@ -786,7 +799,7 @@ const FullscreenImageViewer = ({
       </div>
 
       {/* Main image */}
-      <div 
+      <div
         className="relative w-full h-full flex items-center justify-center p-4"
         onTouchStart={onTouchStart}
         onTouchMove={onTouchMove}
@@ -830,8 +843,8 @@ const FullscreenImageViewer = ({
             <button
               key={index}
               className={`flex-shrink-0 w-16 h-12 rounded border-2 transition-all ${
-                index === currentIndex 
-                  ? "border-white" 
+                index === currentIndex
+                  ? "border-white"
                   : "border-white/30 hover:border-white/60"
               }`}
               onClick={() => setCurrentIndex(index)}
@@ -879,9 +892,9 @@ const RoomCard = ({
           />
         </AspectRatio>
         <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-        
+
         {/* Gallery button */}
-        <Button
+        {/* <Button
           variant="outline"
           size="icon"
           className="absolute bottom-4 right-4 bg-white/80 hover:bg-white opacity-0 group-hover:opacity-100 transition-opacity duration-300"
@@ -892,8 +905,8 @@ const RoomCard = ({
           }}
         >
           <Maximize2 className="h-4 w-4" />
-        </Button>
-        
+        </Button> */}
+
         <Badge className="absolute top-4 left-4 bg-gradient-to-r from-amber-800 to-amber-900 text-white shadow-lg">
           {room.capacity} Guests
         </Badge>
@@ -953,32 +966,47 @@ const RoomCard = ({
       </CardContent>
 
       <CardFooter className="flex flex-col items-stretch border-t pt-4">
-        <div className="flex justify-between items-center mb-4">
-          <div className="font-semibold">
+        <div className="flex justify-between items-center gap-3">
+          {/* <div className="font-semibold">
             <span className="text-2xl">${room.price}</span>
             <span className="text-muted-foreground text-sm"> / night</span>
-          </div>
-          <Dialog open={isModalOpen} onOpenChange={(open) => {
-            setIsModalOpen(open);
-            if (!open) {
-              setIsGalleryMode(false);
-            }
-          }}>
+          </div> */}
+          <Button
+            className="w-full bg-gradient-to-r from-amber-800 to-amber-900 hover:from-amber-900 hover:to-amber-950 text-white shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300"
+            onClick={() => onBookRoomClick?.(room.id)}
+          >
+            Book This Room
+          </Button>
+          <Dialog
+            open={isModalOpen}
+            onOpenChange={(open) => {
+              setIsModalOpen(open);
+              if (!open) {
+                setIsGalleryMode(false);
+              }
+            }}
+          >
             <DialogTrigger asChild>
-              <Button variant="outline" size="sm">
+              <Button variant="outline" size="sm" className="w-full py-5">
                 View Details
               </Button>
             </DialogTrigger>
-            <DialogContent className={`${isGalleryMode ? 'max-w-[95vw] md:max-w-[90vw]' : 'max-w-[90vw] md:max-w-[600px]'} max-h-[90vh] overflow-auto`}>
-              {isGalleryMode ? (
+            {isGalleryMode ? (
+              <DialogContent
+                className={`${isGalleryMode ? "min-w-full max-h-full overflow-auto [&_button[data-dialog-close]]:hidden" : ""}`}
+              >
                 <ModalImageGallery
                   images={room.images}
                   roomName={room.name}
                   initialIndex={galleryInitialIndex}
                   onClose={closeGallery}
                 />
-              ) : (
-                <>
+              </DialogContent>
+            ) : (
+              <>
+                <DialogContent
+                  className={`${isGalleryMode ? "max-w-[95vw] md:max-w-[85vw] h-[90vh]" : "max-w-[90vw] md:max-w-[600px] max-h-[90vh]"} ${isGalleryMode ? "p-6" : "overflow-auto"}`}
+                >
                   <DialogHeader>
                     <DialogTitle>{room.name}</DialogTitle>
                     <DialogDescription>
@@ -987,8 +1015,8 @@ const RoomCard = ({
                   </DialogHeader>
 
                   <div className="mt-4">
-                    <ImageSliderWithFullscreen 
-                      images={room.images} 
+                    <ImageSliderWithFullscreen
+                      images={room.images}
                       roomName={room.name}
                       onFullscreenClick={openGallery}
                     />
@@ -1014,31 +1042,25 @@ const RoomCard = ({
                   </div>
 
                   <div className="mt-6 flex justify-between items-center">
-                    <div className="font-semibold">
+                    {/* <div className="font-semibold">
                       <span className="text-2xl">${room.price}</span>
                       <span className="text-muted-foreground text-sm">
                         {" "}
                         / night
                       </span>
-                    </div>
+                    </div> */}
                     <Button
-                      className="bg-gradient-to-r from-amber-800 to-amber-900 hover:from-amber-900 hover:to-amber-950 text-white shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300"
+                      className="bg-gradient-to-r w-full from-amber-800 to-amber-900 hover:from-amber-900 hover:to-amber-950 text-white shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300"
                       onClick={() => onBookRoomClick?.(room.id)}
                     >
                       Book This Room
                     </Button>
                   </div>
-                </>
-              )}
-            </DialogContent>
+                </DialogContent>
+              </>
+            )}
           </Dialog>
         </div>
-        <Button
-          className="w-full bg-gradient-to-r from-amber-800 to-amber-900 hover:from-amber-900 hover:to-amber-950 text-white shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300"
-          onClick={() => onBookRoomClick?.(room.id)}
-        >
-          Book This Room
-        </Button>
       </CardFooter>
     </Card>
   );
