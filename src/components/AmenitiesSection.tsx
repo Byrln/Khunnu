@@ -172,11 +172,8 @@ const AmenitiesSection = () => {
       <div className="container mx-auto max-w-7xl">
         <div className="text-center mb-8">
           <h2 className="text-2xl md:text-3xl font-bold mb-3">
-            Premium Hotel Amenities & Services in Mongolia
+            Hotel Amenities & Services
           </h2>
-          <p className="text-muted-foreground max-w-2xl mx-auto text-sm text-center">
-            Discover our comprehensive range of luxury amenities and world-class services designed to enhance your stay at Khunnu Hotel
-          </p>
         </div>
 
         {/* Most Popular Facilities */}

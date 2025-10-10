@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import React, { useState, useEffect, useRef } from "react";
 
 const AnimatedNavLink = ({
@@ -11,13 +12,26 @@ const AnimatedNavLink = ({
   href: string;
   children: React.ReactNode;
 }) => {
+  const pathname = usePathname();
+  
   const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
-    e.preventDefault();
-    const targetId = href.replace("#", "");
-    const targetElement = document.getElementById(targetId);
-    if (targetElement) {
-      targetElement.scrollIntoView({ behavior: "smooth" });
+    // If we're on the about page and clicking a hash link, navigate to home page first
+    if (pathname === "/about" && href.startsWith("#")) {
+      e.preventDefault();
+      window.location.href = "/" + href;
+      return;
     }
+    
+    // If we're on home page and clicking a hash link, scroll to section
+    if (pathname === "/" && href.startsWith("#")) {
+      e.preventDefault();
+      const targetId = href.replace("#", "");
+      const targetElement = document.getElementById(targetId);
+      if (targetElement) {
+        targetElement.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+    // For regular links (like /about), let Next.js handle the navigation
   };
 
   return (
@@ -36,6 +50,7 @@ const AnimatedNavLink = ({
 
 export function HunnuNavbar() {
   const [isScrolled, setIsScrolled] = useState(false);
+  const pathname = usePathname();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -60,10 +75,29 @@ export function HunnuNavbar() {
   }, []);
 
   const logoElement = (
-    <Link href="#hero" className="relative flex items-center space-x-2 transition-all duration-700 ease-out">
-      <div className={`relative flex items-center justify-center rounded-lg shadow-lg transition-all duration-700 ease-out ${
-        isScrolled ? "w-8 h-8" : "w-10 h-10"
-      }`}>
+    <Link
+      href="/"
+      onClick={(e) => {
+        // If we're on the home page, scroll to hero section
+        if (pathname === "/") {
+          e.preventDefault();
+          const heroSection = document.getElementById("hero");
+          if (heroSection) {
+            heroSection.scrollIntoView({ behavior: "smooth" });
+          } else {
+            // If hero section doesn't exist, just navigate to home
+            window.location.href = "/";
+          }
+        }
+        // If we're on another page, Link will handle navigation to home page
+      }}
+      className="relative flex items-center space-x-2 transition-all duration-700 ease-out"
+    >
+      <div
+        className={`relative flex items-center justify-center rounded-lg shadow-lg transition-all duration-700 ease-out ${
+          isScrolled ? "w-8 h-8" : "w-10 h-10"
+        }`}
+      >
         <Image
           src="/Logo.jpg"
           alt="Hunnu Hotel"
@@ -74,24 +108,28 @@ export function HunnuNavbar() {
           }`}
         />
       </div>
-      <span className={`text-white font-semibold hidden sm:block transition-all duration-700 ease-out ${
-        isScrolled ? "text-base" : "text-lg"
-      }`}>
+      <span
+        className={`text-white font-semibold hidden sm:block transition-all duration-700 ease-out ${
+          isScrolled ? "text-base" : "text-lg"
+        }`}
+      >
         Khunnu Hotel
       </span>
     </Link>
   );
 
   const navLinksData = [
-    { label: "Rooms", href: "#rooms" },
-    { label: "Amenities", href: "#amenities" },
+    { label: "About", href: "/about" },
+    { label: "Rooms", href: pathname === "/about" ? "/#rooms" : "#rooms" },
+    { label: "Amenities", href: pathname === "/about" ? "/#amenities" : "#amenities" },
   ];
 
   const bookNowButton = (
     <button
       onClick={() => {
-        const bookingUrl = "https://www.booking.com/hotel/mn/khunnu-palace-ulaanbaatar1.html?aid=356980&label=gog235jc-10CAsolgFCGmtodW5udS1wYWxhY2UtdWxhYW5iYWF0YXIxSDNYA2iWAYgBAZgBM7gBF8gBDNgBA-gBAfgBAYgCAagCAbgC7-XtxgbAAgHSAiQ2YjA3OWUzZi1iZmE3LTRkZDktODk5ZS0wYjBjNzQ0ZDZlMTPYAgHgAgE&sid=e32ce5ef89d1ffadff12a18b9f2bafbd&age=0&all_sr_blocks=1498257401_421512897_2_2_0&checkin=2025-09-30&checkout=2025-10-23&dest_id=-2353539&dest_type=city&dist=0&group_adults=1&group_children=0&hapos=1&highlighted_blocks=1498257401_421512897_2_2_0&hpos=1&matching_block_id=1498257401_421512897_2_2_0&no_rooms=1&req_adults=1&req_children=0&room1=A&sb_price_type=total&sr_order=popularity&sr_pri_blocks=1498257401_421512897_2_2_0__92000&srepoch=1759212309&srpvid=68522ab8ceea01b0&type=total&ucfs=1&";
-        window.open(bookingUrl, '_blank');
+        const bookingUrl =
+          "https://www.booking.com/hotel/mn/khunnu-palace-ulaanbaatar1.html?aid=356980&label=gog235jc-10CAsolgFCGmtodW5udS1wYWxhY2UtdWxhYW5iYWF0YXIxSDNYA2iWAYgBAZgBM7gBF8gBDNgBA-gBAfgBAYgCAagCAbgC7-XtxgbAAgHSAiQ2YjA3OWUzZi1iZmE3LTRkZDktODk5ZS0wYjBjNzQ0ZDZlMTPYAgHgAgE&sid=e32ce5ef89d1ffadff12a18b9f2bafbd&age=0&all_sr_blocks=1498257401_421512897_2_2_0&checkin=2025-09-30&checkout=2025-10-23&dest_id=-2353539&dest_type=city&dist=0&group_adults=1&group_children=0&hapos=1&highlighted_blocks=1498257401_421512897_2_2_0&hpos=1&matching_block_id=1498257401_421512897_2_2_0&no_rooms=1&req_adults=1&req_children=0&room1=A&sb_price_type=total&sr_order=popularity&sr_pri_blocks=1498257401_421512897_2_2_0__92000&srepoch=1759212309&srpvid=68522ab8ceea01b0&type=total&ucfs=1&";
+        window.open(bookingUrl, "_blank");
       }}
       className={`border border-amber-800/50 bg-amber-800/20 text-amber-200 rounded-full hover:border-amber-700 hover:text-amber-100 hover:bg-amber-800/30 transition-all duration-300 w-full sm:w-auto whitespace-nowrap ${
         isScrolled ? "px-3 py-1.5 text-xs" : "px-4 py-2 text-sm"
@@ -139,9 +177,11 @@ export function HunnuNavbar() {
     >
       <div className="flex items-center">{logoElement}</div>
 
-      <nav className={`hidden sm:flex items-center transition-all duration-700 ease-out ${
-        isScrolled ? "space-x-4 text-xs" : "space-x-6 text-sm"
-      }`}>
+      <nav
+        className={`hidden sm:flex items-center transition-all duration-700 ease-out ${
+          isScrolled ? "space-x-4 text-xs" : "space-x-6 text-sm"
+        }`}
+      >
         {navLinksData.map((link) => (
           <AnimatedNavLink key={link.href} href={link.href}>
             {link.label}
